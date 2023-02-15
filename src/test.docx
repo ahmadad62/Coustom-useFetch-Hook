@@ -1,0 +1,5 @@
+Connect components to the Redux store:
+
+You can use the connect function from the react-redux package to connect a component to the Redux store. This allows the component to access the state and dispatch actions to update the state.
+
+For example, you could define a component that displays the value of a counter stored in the Redux store:
