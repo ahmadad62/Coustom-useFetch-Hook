@@ -10,9 +10,11 @@ export default function Home() {
         setTimeout(() => {
             fetch('https://jsonplaceholder.typicode.com/comments')
                 .then(response => {
+                    console.log(response)
                     if (!response.ok) {
                         throw Error('could not fetch comments from server');
                     }
+                    return response.json(); // parse the response to JSON
                 })
                 .then(data => {
                     setBlogs(data)
@@ -22,6 +24,8 @@ export default function Home() {
                 .catch(err => {
                     setError(err.message)
                     setIsPending(false)
+                    console.log(err)
+                    
 
                 });
         }, 1000)
